@@ -18,7 +18,7 @@ export const goods = [
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
 
-  const sucessLightClass = good =>
+  const getSuccessLightClass = good =>
     good === selectedGood ? 'has-background-success-light' : '';
 
   const hasSelectedGood = selectedGood !== '';
@@ -47,7 +47,11 @@ export const App = () => {
             const isSelected = good === selectedGood;
 
             return (
-              <tr key={good} data-cy="Good" className={sucessLightClass(good)}>
+              <tr
+                key={good}
+                data-cy="Good"
+                className={getSuccessLightClass(good)}
+              >
                 <td>
                   {isSelected ? (
                     <button
